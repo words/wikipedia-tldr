@@ -7,11 +7,8 @@ test('happy path for a known word', async () => {
     'html', 
     'text'
   ])
-  expect(result.html.includes('<p>')).toBe(true)
-  expect(result.text.includes('<p>')).toBe(false)
-
-  // trims newlines and extra stuff
-  expect(result.text).toMatch(/^Etymology: From Latin/)
+  expect(result.html.includes('<b>')).toBe(true)
+  expect(result.text.includes('<b>')).toBe(false)
 })
 
 test('unhappy path with a nonexistent term', async () => {
@@ -21,5 +18,5 @@ test('unhappy path with a nonexistent term', async () => {
 
 test('alternate languages', async () => {
   const result = await lookup('muñeca', 'es')
-  expect(result.text).toMatch('Figura hecha de distintos materiales')
+  expect(result.text).toMatch('Una muñeca es una figura')
 })

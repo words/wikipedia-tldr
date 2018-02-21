@@ -1,38 +1,25 @@
 const get = require('got')
 const URL = require('url')
-const flat = require('flat')
-const {get: getProp} = require('lodash')
 const cheerio = require('cheerio')
 
 async function lookup (query, locale = 'en') {
-  // Example query
-  // https://en.wikipedia-tldr.org/w/api.php?action=query&prop=extracts&titles=pomology&format=json
-
   const url = URL.format({
     protocol: 'https',
-    hostname: `${locale}.wikipedia-tldr.org`,
-    pathname: '/w/api.php',
-    query: {
-      action: 'query',
-      format: 'json',
-      prop: 'extracts',
-      titles: query
-    }
+    hostname: `${locale}.wikipedia.org`,
+    pathname: `/wiki/${query}`
   })
 
-  const {body} = await get(url, {json: true})
-  const key = Object.keys(flat(body)).find(key => key.endsWith('.extract'))
-  if (!key) return null // 404 word not found
-  const html = getProp(body, key)
-  const text = cheerio.load(html).text()
-    .trim() // remove extra whitespace and newlines
-    .replace('English\n', '')
-    .replace('Noun\n', '')
-    .replace('Etymology\n', 'Etymology: ')
-    .replace('Translation\n', 'Translation: ')
-    .replace('Anagrams\n', 'Anagrams: ')
-    .replace(/\n+/gm, '\n') // duplicate newlines
-    .replace(/\n/gm, '; ')
+  let body
+  try {
+    const res = await get(url)
+    body = res.body
+  } catch (err) {
+    return null
+  }
+
+  const $ = cheerio.load(body)
+  const html = $('#mw-content-text p').first().html()
+  const text = $('#mw-content-text p').first().text()
   return {query, html, text}
 }
 

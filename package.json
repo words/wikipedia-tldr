@@ -21,5 +21,10 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "bin": "cli.js"
+  "bin": {
+    "wikipedia-tldr": "cli.js",
+    "wp-tldr": "cli.js",
+    "wptldr": "cli.js",
+    "tldr": "cli.js"
+  }
 }

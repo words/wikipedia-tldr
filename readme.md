@@ -15,9 +15,9 @@ npm install wikipedia-tldr
 Use it in JavaScript:
 
 ```js
-const wikipedia-tldr = require('wikipedia-tldr')
+const tldr = require('wikipedia-tldr')
 
-wikipedia-tldr('somatology').then(result => {
+tldr('somatology').then(result => {
   console.log(result)
 })
 ```
@@ -38,7 +38,7 @@ The default language is English `en`, but you can specify a different language
 with an optional secondar argument to the function:
 
 ```js
-wikipedia-tldr('muñeca', 'es')
+tldr('muñeca', 'es')
 ```
 
 For available language codes, see the [List of Wikipedias](https://en.wikipedia.org/wiki/List_of_Wikipedias).
@@ -82,9 +82,7 @@ npm test
 ## Dependencies
 
 - [cheerio](https://github.com/cheeriojs/cheerio): Tiny, fast, and elegant implementation of core jQuery designed specifically for the server
-- [flat](https://github.com/hughsk/flat): Take a nested Javascript object and flatten it, or unflatten an object with delimited keys
 - [got](): Simplified HTTP requests
-- [lodash](): Lodash modular utilities.
 
 ## Dev Dependencies
 
