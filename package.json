@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "got": "^8.1.0",
+    "got": "^8.1.0"
   },
   "devDependencies": {
     "jest": "^22.3.0",
