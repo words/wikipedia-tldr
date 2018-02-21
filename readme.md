@@ -1,6 +1,6 @@
-# wiktionary 
+# wikipedia-tldr 
 
-> Look up words on [wiktionary.org](https://www.wiktionary.org/) in English or any other language.
+> Look up words on [wikipedia-tldr.org](https://www.wikipedia-tldr.org/) in English or any other language.
 
 Use it programmatically with JavaScript to fetch JSON, or use the command line interface (CLI) to look up words from your terminal.
 
@@ -9,15 +9,15 @@ Use it programmatically with JavaScript to fetch JSON, or use the command line i
 Install it:
 
 ```sh
-npm install wiktionary
+npm install wikipedia-tldr
 ```
 
 Use it in JavaScript:
 
 ```js
-const wiktionary = require('wiktionary')
+const wikipedia-tldr = require('wikipedia-tldr')
 
-wiktionary('somatology').then(result => {
+wikipedia-tldr('somatology').then(result => {
   console.log(result)
 })
 ```
@@ -38,7 +38,7 @@ The default language is English `en`, but you can specify a different language
 with an optional secondar argument to the function:
 
 ```js
-wiktionary('muñeca', 'es')
+wikipedia-tldr('muñeca', 'es')
 ```
 
 For available language codes, see the [List of Wikipedias](https://en.wikipedia.org/wiki/List_of_Wikipedias).
@@ -46,13 +46,13 @@ For available language codes, see the [List of Wikipedias](https://en.wikipedia.
 ## CLI Usage
 
 ```
-npm i -g wiktionary && wiktionary pomology
+npm i -g wikipedia-tldr && wikipedia-tldr pomology
 ```
 
 or use [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 
 ```sh
-$ npx wiktionary zymology
+$ npx wikipedia-tldr zymology
 npx: installed 62 in 4.301s
 English
 

@@ -6,11 +6,11 @@ const cheerio = require('cheerio')
 
 async function lookup (query, locale = 'en') {
   // Example query
-  // https://en.wiktionary.org/w/api.php?action=query&prop=extracts&titles=pomology&format=json
+  // https://en.wikipedia-tldr.org/w/api.php?action=query&prop=extracts&titles=pomology&format=json
 
   const url = URL.format({
     protocol: 'https',
-    hostname: `${locale}.wiktionary.org`,
+    hostname: `${locale}.wikipedia-tldr.org`,
     pathname: '/w/api.php',
     query: {
       action: 'query',
