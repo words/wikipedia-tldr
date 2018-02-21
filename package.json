@@ -1,6 +1,6 @@
 {
   "name": "wikipedia-tldr",
-  "description": "Grab the first paragraph from any Wikipedia article",
+  "description": "Grab the first paragraph of any Wikipedia page",
   "repository": "https://github.com/words/wikipedia-tldr",
   "version": "1.0.0",
   "main": "index.js",

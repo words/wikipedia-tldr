@@ -1,6 +1,6 @@
 # wikipedia-tldr 
 
-> Grab the first paragraph from any Wikipedia article
+> Grab the first paragraph of any Wikipedia page
 
 Use it programmatically with JavaScript to fetch JSON, or use the command line interface (CLI) to look stuff up from your terminal.
 
