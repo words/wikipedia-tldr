@@ -1,8 +1,8 @@
 # wikipedia-tldr 
 
-> Look up words on [wikipedia-tldr.org](https://www.wikipedia-tldr.org/) in English or any other language.
+> Grab the first paragraph from any Wikipedia article
 
-Use it programmatically with JavaScript to fetch JSON, or use the command line interface (CLI) to look up words from your terminal.
+Use it programmatically with JavaScript to fetch JSON, or use the command line interface (CLI) to look stuff up from your terminal.
 
 ## Programmatic Usage
 
