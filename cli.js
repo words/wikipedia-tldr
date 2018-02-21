@@ -2,6 +2,7 @@
 
 const lookup = require('.')
 const query = process.argv.slice(2)
+const wrap = require('wordwrap')(80)
 
 async function main() {
   if (!query.length) {
@@ -10,7 +11,7 @@ async function main() {
   }
   const result = await lookup(query)
   if (result) {
-    console.log(result.text)
+    console.log(wrap(result.text))
   } else {
     console.log('no results :[')
   }
