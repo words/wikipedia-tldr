@@ -1,26 +1,24 @@
 const get = require('got')
 const URL = require('url')
-const cheerio = require('cheerio')
 
 async function lookup (query, locale = 'en') {
   const url = URL.format({
     protocol: 'https',
     hostname: `${locale}.wikipedia.org`,
-    pathname: `/wiki/${query}`
+    pathname: `/api/rest_v1/page/summary/${query}`
   })
+  console.log(url)
 
   let body
   try {
-    const res = await get(url)
+    const res = await get(url, {json: true})
     body = res.body
   } catch (err) {
+    console.error(err)
     return null
   }
 
-  const $ = cheerio.load(body)
-  const html = $('#mw-content-text p').first().html()
-  const text = $('#mw-content-text p').first().text()
-  return {query, html, text}
+  return Object.assign({}, body, {query: query})
 }
 
 module.exports = lookup
