@@ -26,9 +26,24 @@ The result looks like this:
 
 ```js
 {
-  query: 'somatology',
-  html: '<p> ...same as text but with markup preserved... </p>',
-  text: 'English\nEtymology\nFrom soma (body) +‎ -ology.\nNoun\nsomatology (usually uncountable, plural somatologies)\nThe study of the physical nature of human beings.\nDerived terms\nanthroposomatology\n'
+  query: "pomology",
+  type: "standard",
+  title: "Pomology",
+  displaytitle: "Pomology",
+  thumbnail: {
+    source: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Poire_Willermoz.jpg/241px-Poire_Willermoz.jpg",
+    width: 241,
+    height: 320
+  },
+  originalimage: {
+    source: "https://upload.wikimedia.org/wikipedia/commons/9/95/Poire_Willermoz.jpg",
+    width: 644,
+    height: 856
+  },
+  lang: "en",
+  description: "branch of botany that studies and cultivates fruit",
+  extract: "Pomology is a branch of botany that studies and cultivates fruit. The denomination fruticulture—introduced from Romance languages —is also used.",
+  extract_html: "<p><b>Pomology</b> is a branch of botany that studies and cultivates fruit. The denomination <b>fruticulture</b>—introduced from Romance languages —is also used.</p>"
 }
 ```
 

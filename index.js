@@ -1,5 +1,16 @@
 const get = require('got')
 const URL = require('url')
+const unwantedProps = [
+  'content_urls', 
+  'dir', 
+  'revision', 
+  'tid', 
+  'timestamp', 
+  'pageid', 
+  'namespace', 
+  'titles', 
+  'api_urls'
+]
 
 async function lookup (query, locale = 'en') {
   const url = URL.format({
@@ -16,7 +27,11 @@ async function lookup (query, locale = 'en') {
     return null
   }
 
-  return Object.assign({}, body, {query: query})
+  unwantedProps.forEach(prop => {
+    delete body[prop]
+  })
+
+  return Object.assign({}, {query: query},  body)
 }
 
 module.exports = lookup
