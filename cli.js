@@ -4,7 +4,7 @@ const lookup = require('.')
 const query = process.argv.slice(2)
 const wrap = require('wordwrap')(80)
 
-async function main() {
+async function main () {
   if (!query.length) {
     console.log('Usage: wikipedia-tldr <term>')
     return

@@ -2,7 +2,6 @@ const lookup = require('.')
 
 test('happy path for a known word', async () => {
   const result = await lookup('pomology')
-  const keys = Object.keys(result)
   expect(result).toHaveProperty('query', 'pomology')
   expect(result).toHaveProperty('title', 'Pomology')
   expect(result).toHaveProperty('description')

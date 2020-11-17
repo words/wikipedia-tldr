@@ -1,14 +1,14 @@
 const get = require('got')
 const URL = require('url')
 const unwantedProps = [
-  'content_urls', 
-  'dir', 
-  'revision', 
-  'tid', 
-  'timestamp', 
-  'pageid', 
-  'namespace', 
-  'titles', 
+  'content_urls',
+  'dir',
+  'revision',
+  'tid',
+  'timestamp',
+  'pageid',
+  'namespace',
+  'titles',
   'api_urls'
 ]
 
@@ -21,7 +21,7 @@ async function lookup (query, locale = 'en') {
 
   let body
   try {
-    const res = await get(url, {json: true})
+    const res = await get(url, { json: true })
     body = res.body
   } catch (err) {
     return null
@@ -31,7 +31,15 @@ async function lookup (query, locale = 'en') {
     delete body[prop]
   })
 
-  return Object.assign({}, {query: query},  body)
+  if (body.text) {
+    body.text = body.text
+      .trim()
+      .replace(/\[\d+\]/g, '')
+  } // remove footnotes like [1]
+
+  if (body.html) body.html = body.html.trim()
+
+  return Object.assign({}, { query: query }, body)
 }
 
 module.exports = lookup
