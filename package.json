@@ -11,14 +11,15 @@
   "devDependencies": {
     "jest": "^22.3.0",
     "semantic-release": "^12.4.1",
-    "standard": "^16.0.2",
-    "travis-deploy-once": "^4.3.4"
+    "standard": "^16.0.2"
   },
   "scripts": {
     "test": "jest && standard",
     "lint": "standard --fix",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "semantic-release": "semantic-release"
+  },
+  "release": {
+    "branches": ["main"]
   },
   "bin": {
     "wikipedia-tldr": "cli.js",
