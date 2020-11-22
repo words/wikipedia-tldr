@@ -15,11 +15,12 @@
   },
   "scripts": {
     "test": "jest && standard",
-    "lint": "standard --fix",
-    "semantic-release": "semantic-release"
+    "lint": "standard --fix"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "bin": {
     "wikipedia-tldr": "cli.js",
