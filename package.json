@@ -2,7 +2,7 @@
   "name": "wikipedia-tldr",
   "description": "Grab the first paragraph of any Wikipedia page",
   "repository": "https://github.com/words/wikipedia-tldr",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -27,6 +27,8 @@
     "tldr": "cli.js"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   }
 }
