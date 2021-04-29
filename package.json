@@ -5,9 +5,6 @@
   "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "got": "^8.1.0"
-  },
   "devDependencies": {
     "jest": "^22.3.0",
     "standard": "^16.0.2"
@@ -26,5 +23,8 @@
     "env": [
       "jest"
     ]
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }

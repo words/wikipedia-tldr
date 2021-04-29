@@ -1,5 +1,6 @@
-const get = require('got')
-const URL = require('url')
+const fetch = require('node-fetch')
+const { URL, URLSearchParams } = require('url')
+
 const unwantedProps = [
   'content_urls',
   'dir',
@@ -12,17 +13,23 @@ const unwantedProps = [
   'api_urls'
 ]
 
-async function lookup (query, locale = 'en') {
-  const url = URL.format({
-    protocol: 'https',
-    hostname: `${locale}.wikipedia.org`,
-    pathname: `/api/rest_v1/page/summary/${encodeURIComponent(query)}`
-  })
+async function lookup (query, locale = 'en', followRedirects = false) {
+  const url = new URL(`https://${locale}.wikipedia.org`)
+  const params = { followRedirects }
+
+  url.pathname = `/api/rest_v1/page/summary/${encodeURIComponent(query)}`
+  url.search = new URLSearchParams(params).toString()
 
   let body
+
   try {
-    const res = await get(url, { json: true })
-    body = res.body
+    const res = await fetch(url).then(res => {
+      if (!res.ok) {
+        throw Error(res.statusText)
+      }
+      return res
+    })
+    body = await res.json()
   } catch (err) {
     return null
   }
