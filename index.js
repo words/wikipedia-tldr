@@ -13,7 +13,12 @@ const unwantedProps = [
   'api_urls'
 ]
 
-async function lookup (query, locale = 'en', followRedirects = false) {
+async function lookup (
+  query, 
+  locale = 'en', 
+  followRedirects = false,
+  unwantedProps = unwantedProps,
+) {
   const url = new URL(`https://${locale}.wikipedia.org`)
   const params = { followRedirects }
 
