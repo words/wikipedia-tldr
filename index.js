@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const { URL, URLSearchParams } = require('url')
 
-const unwantedProps = [
+const defaultUnwantedProps = [
   'content_urls',
   'dir',
   'revision',
@@ -17,7 +17,7 @@ async function lookup (
   query, 
   locale = 'en', 
   followRedirects = false,
-  unwantedProps = unwantedProps,
+  unwantedProps = defaultUnwantedProps,
 ) {
   const url = new URL(`https://${locale}.wikipedia.org`)
   const params = { followRedirects }
