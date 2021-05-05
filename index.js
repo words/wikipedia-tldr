@@ -14,10 +14,10 @@ const defaultUnwantedProps = [
 ]
 
 async function lookup (
-  query, 
-  locale = 'en', 
+  query,
+  locale = 'en',
   followRedirects = false,
-  unwantedProps = defaultUnwantedProps,
+  unwantedProps = defaultUnwantedProps
 ) {
   const url = new URL(`https://${locale}.wikipedia.org`)
   const params = { followRedirects }

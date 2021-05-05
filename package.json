@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "parcel build index.js --public-url ./dist/ --no-cache --global wikipediatldr --target node",
-    "test": "jest && standard",
+    "test": "jest && standard './index.js'",
     "lint": "standard --fix"
   },
   "bin": {
