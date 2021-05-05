@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const lookup = require('.')
+const lookup = require('./dist/index.node')
 const query = process.argv.slice(2)
 const wrap = require('wordwrap')(80)
 
