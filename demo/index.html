@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang=en>
+
+<head>
+  <meta charset=utf-8>
+  <title>Wikipedia TLDR Browser Demo</title>
+</head>
+
+<body>
+  <div class="result">
+
+  </div>
+
+  <script type="module">
+    import wikipediatldr from '../index.js'
+    (async () => {
+      const results = await wikipediatldr('pink');
+      console.log(results);
+      document.querySelector('.result').innerHTML = `
+        <h1>${results.displaytitle}</h1>
+        <div>${results.extract_html}</div>
+        <img src="${results.originalimage.source}" alt="${results.displaytitle}" />
+      `
+    })()
+  </script>
+</body>
+
+</html>

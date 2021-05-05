@@ -1,6 +1,3 @@
-const fetch = require('node-fetch')
-const { URL, URLSearchParams } = require('url')
-
 const defaultUnwantedProps = [
   'content_urls',
   'dir',
@@ -54,4 +51,4 @@ async function lookup (
   return Object.assign({}, { query: query }, body)
 }
 
-module.exports = lookup
+export default lookup

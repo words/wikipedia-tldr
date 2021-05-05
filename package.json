@@ -3,15 +3,14 @@
   "description": "Grab the first paragraph of any Wikipedia page",
   "repository": "https://github.com/words/wikipedia-tldr",
   "version": "1.0.3",
-  "main": "dist/index.js",
+  "main": "index.node.js",
+  "browser": "index.js",
   "license": "MIT",
   "devDependencies": {
     "jest": "^22.3.0",
-    "parcel-bundler": "^1.12.5",
     "standard": "^16.0.2"
   },
   "scripts": {
-    "build": "parcel build index.js --public-url ./dist/ --no-cache --global wikipediatldr --target node",
     "test": "jest && standard './index.js'",
     "lint": "standard --fix"
   },
