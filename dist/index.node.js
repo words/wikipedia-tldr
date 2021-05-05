@@ -54,5 +54,4 @@ async function lookup (
   return Object.assign({}, { query: query }, body)
 }
 
-
 module.exports = lookup

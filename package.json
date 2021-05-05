@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "node build.js",
-    "test": "npm run build && jest && standard './index.js'",
+    "test": "npm run build && jest && standard './dist/index.node.js'",
     "lint": "standard --fix"
   },
   "bin": {
