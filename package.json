@@ -2,7 +2,7 @@
   "name": "wikipedia-tldr",
   "description": "Grab the first paragraph of any Wikipedia page",
   "repository": "https://github.com/words/wikipedia-tldr",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "main": "dist/index.node.js",
   "browser": "dist/index.js",
   "license": "MIT",
