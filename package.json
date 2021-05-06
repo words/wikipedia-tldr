@@ -2,18 +2,17 @@
   "name": "wikipedia-tldr",
   "description": "Grab the first paragraph of any Wikipedia page",
   "repository": "https://github.com/words/wikipedia-tldr",
-  "version": "1.0.2",
-  "main": "index.js",
+  "version": "1.0.3",
+  "main": "dist/index.node.js",
+  "browser": "dist/index.js",
   "license": "MIT",
-  "dependencies": {
-    "got": "^8.1.0"
-  },
   "devDependencies": {
-    "jest": "^22.3.0",
+    "jest": "^26.6.3",
     "standard": "^16.0.2"
   },
   "scripts": {
-    "test": "jest && standard",
+    "build": "node build.js",
+    "test": "npm run build && jest && standard './dist/index.node.js'",
     "lint": "standard --fix"
   },
   "bin": {
@@ -26,5 +25,8 @@
     "env": [
       "jest"
     ]
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }

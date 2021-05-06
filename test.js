@@ -1,7 +1,8 @@
-const lookup = require('.')
+const lookup = require('./dist/index.node.js')
 
 test('happy path for a known word', async () => {
   const result = await lookup('pomology')
+
   expect(result).toHaveProperty('query', 'pomology')
   expect(result).toHaveProperty('title', 'Pomology')
   expect(result).toHaveProperty('description')

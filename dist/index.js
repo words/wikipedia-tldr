@@ -50,3 +50,5 @@ async function lookup (
 
   return Object.assign({}, { query: query }, body)
 }
+
+export default lookup
