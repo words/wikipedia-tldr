@@ -19,3 +19,25 @@ test('alternate languages', async () => {
   const result = await lookup('Muñeca', 'es')
   expect(result.extract).toMatch('Una muñeca es una figura')
 })
+
+
+// cli tests
+const { spawn } = require('child_process')
+
+test('cli', async (done) => {
+  const reverse = spawn('node', ['cli.js', 'pomology'])
+  const chunks = []
+
+  reverse.stdout.on('data', (chunk) => {
+    chunks.push(chunk)
+  });
+
+  reverse.stdout.on('end', () => {
+    const output = Buffer
+      .concat(chunks)
+      .toString()
+
+    expect(output).toContain('Pomology:')
+    done()
+  });
+});

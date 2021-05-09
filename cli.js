@@ -11,7 +11,6 @@ async function main () {
   }
   const result = await lookup(query)
 
-  console.log(result)
   if (result) {
     console.log(`\x1b[33m%s\x1b[0m`, wrap(`${result.title}: ${result.description}`))
     console.log(wrap(result.extract))
